@@ -1,0 +1,35 @@
+uuid: 67d21adf-7bb6-4f18-90f6-fbf8545ef4c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.service_request.body
+    - field.field.node.service_request.field_excerpt_issue
+    - field.field.node.service_request.field_image_issues
+    - node.type.service_request
+  module:
+    - text
+    - user
+id: node.service_request.teaser
+targetEntityType: node
+bundle: service_request
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_excerpt_issue: true
+  field_image_issues: true
+  langcode: true

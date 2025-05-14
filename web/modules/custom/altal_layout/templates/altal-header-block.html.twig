@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a header block.
+ *
+ * Available variables:
+ * - header_logo: The URL of the header logo.
+ * - main_menu: The main menu items.
+ * - language_switcher: The language switcher links.
+ */
+#}
+<header class="site-header container-fluid py-3 shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between">
+    {# Logo & Site Name #}
+    <a href="{{ path('<front>') }}" class="d-flex align-items-center text-decoration-none">
+      {% if header_logo %}
+        <img src="{{ header_logo }}" alt="{{ 'Altal'|t }}" height="60" class="me-3">
+      {% endif %}
+      <h1 class="mb-0 fs-4 fw-bold text-primary">{{ 'مدينة التل'|t }}</h1>
+    </a>
+
+    {# Desktop Navigation #}
+    <div class="d-none d-md-flex align-items-center">
+      <nav class="main-navigation">
+        {% if main_menu %}
+          {{ main_menu }}
+        {% else %}
+          {{ drupal_menu('main') }}
+        {% endif %}
+      </nav>
+      
+      {# Language Switcher #}
+      <div class="header-lang-switcher dropdown">
+        <button class="lang-toggle dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="lang-icon bi bi-globe"></span>
+          <span class="lang-code">En</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+          <li><a class="dropdown-item active" href="/en">English</a></li>
+          <li><a class="dropdown-item" href="/ar">العربية</a></li>
+        </ul>
+      </div>
+      
+      {# Auth Links #}
+      <div class="auth-links">
+        <a href="{{ path('user.login') }}" class="btn btn-outline-primary">
+          <i class="bi bi-box-arrow-in-right me-1"></i>{{ 'Login'|t }}
+        </a>
+        <a href="{{ path('user.register') }}" class="btn btn-primary">
+          <i class="bi bi-person-plus me-1"></i>{{ 'Register'|t }}
+        </a>
+      </div>
+    </div>
+
+    {# Mobile Menu Toggle #}
+    <button class="mobile-menu-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="{{ 'Toggle Menu'|t }}">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  {# Mobile Navigation #}
+  <div id="mobileMenu" class="collapse d-md-none">
+    <div class="container py-3">
+      <nav class="main-navigation mb-3">
+        {% if main_menu %}
+          {{ main_menu }}
+        {% else %}
+          {{ drupal_menu('main') }}
+        {% endif %}
+      </nav>
+      
+      {# Mobile Language Switcher #}
+      <div class="header-lang-switcher dropdown mb-3">
+        <button class="lang-toggle dropdown-toggle w-100" type="button" id="mobileLangDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="lang-icon bi bi-globe"></span>
+          <span class="lang-code">En</span>
+        </button>
+        <ul class="dropdown-menu w-100" aria-labelledby="mobileLangDropdown">
+          <li><a class="dropdown-item active" href="/en">English</a></li>
+          <li><a class="dropdown-item" href="/ar">العربية</a></li>
+        </ul>
+      </div>
+      
+      {# Mobile Auth Links #}
+      <div class="mobile-auth-links">
+        <a href="{{ path('user.login') }}" class="btn btn-outline-primary w-100 mb-2">
+          <i class="bi bi-box-arrow-in-right me-1"></i>{{ 'Login'|t }}
+        </a>
+        <a href="{{ path('user.register') }}" class="btn btn-primary w-100">
+          <i class="bi bi-person-plus me-1"></i>{{ 'Register'|t }}
+        </a>
+      </div>
+    </div>
+  </div>
+</header> 

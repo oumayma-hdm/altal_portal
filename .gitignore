@@ -1,0 +1,8 @@
+.qodo
+/web/sites/default/files
+/.env
+/web/sites/*/files/
+/web/sites/*/private/
+/web/sites/*/settings*.php
+.env
+*.sql

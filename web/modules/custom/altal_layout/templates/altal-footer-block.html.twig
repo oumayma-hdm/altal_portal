@@ -1,0 +1,111 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a footer block.
+ *
+ * Available variables:
+ * - footer_logo: The URL of the footer logo.
+ * - footer_text: The footer text content.
+ */
+#}
+<div class="altal-footer-block">
+  <div class="container">
+    {# Top row with branding, quick services, and contact #}
+    <div class="row">
+      {# Logo and Description Column #}
+      <div class="col-md-4">
+        <div class="footer-branding">
+          <div class="footer-text">
+            <p>{{ 'Altal City Portal - Your Gateway to Municipal Services'|t }}</p>
+            <p>{{ 'Providing efficient and accessible services to our citizens'|t }}</p>
+          </div>
+          <img src="{{ base_path ~ directory }}/images/Altal_logo.png" alt="{{ 'Altal City Logo'|t }}" class="footer-brand-logo">
+        </div>
+      </div>
+
+      {# Quick Services Column #}
+      <div class="col-md-4">
+        <h4>{{ 'Quick Services'|t }}</h4>
+        <ul class="footer-links">
+          <li><a href="#">{{ 'Submit a Complaint'|t }}</a></li>
+          <li><a href="#">{{ 'Building Permits'|t }}</a></li>
+          <li><a href="#">{{ 'Pay Fees'|t }}</a></li>
+          <li><a href="#">{{ 'Book an Appointment'|t }}</a></li>
+          <li><a href="#">{{ 'Emergency Alerts'|t }}</a></li>
+          <li><a href="#">{{ 'Latest News'|t }}</a></li>
+        </ul>
+      </div>
+
+      {# Contact Info Column #}
+      <div class="col-md-4">
+        <h4>{{ 'Contact Us'|t }}</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i> <span>{{ 'Altal City Center, Syria'|t }}</span></li>
+          <li><i class="fas fa-phone"></i> <span>{{ 'Emergency: 911'|t }}</span></li>
+          <li><i class="fas fa-phone"></i> <span>{{ 'Municipality: +963 XX XXX XXXX'|t }}</span></li>
+          <li><i class="fas fa-envelope"></i> <span>{{ 'info@altal-city.gov.sy'|t }}</span></li>
+        </ul>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    {# Services Categories #}
+    <div class="footer-services">
+      <div class="row">
+        <div class="col-md-3 col-6">
+          <h5>{{ 'Municipal Services'|t }}</h5>
+          <ul class="footer-links">
+            <li><a href="#">{{ 'Building Permits'|t }}</a></li>
+            <li><a href="#">{{ 'Fees & Payments'|t }}</a></li>
+            <li><a href="#">{{ 'Appointments'|t }}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-6">
+          <h5>{{ 'Citizen Services'|t }}</h5>
+          <ul class="footer-links">
+            <li><a href="#">{{ 'Complaints & Suggestions'|t }}</a></li>
+            <li><a href="#">{{ 'Emergency Alerts'|t }}</a></li>
+            <li><a href="#">{{ 'Latest News'|t }}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-6">
+          <h5>{{ 'Resources'|t }}</h5>
+          <ul class="footer-links">
+            <li><a href="#">{{ 'Forms & Documents'|t }}</a></li>
+            <li><a href="#">{{ 'FAQs'|t }}</a></li>
+            <li><a href="#">{{ 'City Map'|t }}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-6">
+          <h5>{{ 'About'|t }}</h5>
+          <ul class="footer-links">
+            <li><a href="#">{{ 'About Altal'|t }}</a></li>
+            <li><a href="#">{{ 'City Council'|t }}</a></li>
+            <li><a href="#">{{ 'Contact Us'|t }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {# Copyright Section #}
+    <div class="footer-bottom">
+      <div class="row">
+        <div class="col-md-6 col-12 text-center text-md-start">
+          <p>&copy; {{ "now"|date("Y") }} {{ 'Altal City Municipality. All rights reserved.'|t }}</p>
+        </div>
+        <div class="col-md-6 col-12 text-center text-md-end">
+          <ul class="footer-bottom-links">
+            <li><a href="#">{{ 'Privacy Policy'|t }}</a></li>
+            <li><a href="#">{{ 'Terms of Use'|t }}</a></li>
+            <li><a href="#">{{ 'Accessibility'|t }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

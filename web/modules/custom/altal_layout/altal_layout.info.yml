@@ -1,0 +1,5 @@
+name: Altal Layout
+type: module
+description: 'Provides reusable Header and Footer blocks for Altal.'
+core_version_requirement: ^10
+package: Custom

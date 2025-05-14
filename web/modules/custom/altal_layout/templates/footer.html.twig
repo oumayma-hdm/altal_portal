@@ -1,0 +1,25 @@
+<footer class="vf-footer vf-footer--altal">
+    <div class="container">
+      <div class="vf-footer-items">
+        <div class="vf-footer__top">
+          <div class="block_content block-footer-logo">
+            <a href={{ url('<front>') }}>
+              <img src='{{ file_url(content.logo_url) }}' alt='{{ content.logo_alt }}'>
+            </a>
+          </div>
+        </div>
+        <div class="vf-footer__middle">
+          <div class="block-footer-menu-separate sm-menu-block-center">
+            <div class="block_content">
+                {{ altal_render('block', 'system_menu_block:footer') }}
+            </div>
+          </div>
+        </div>
+        <div class="vf-footer__bottom">
+          <div class="block-social-media">
+            {{ altal_render('block', 'altal_socialmedialinks') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>

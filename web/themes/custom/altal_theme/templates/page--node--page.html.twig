@@ -1,0 +1,110 @@
+{% set header_top = page.header_top ?? '' %}
+{% set header = page.header ?? '' %}
+{% set primary_menu = page.primary_menu ?? '' %}
+{% set content = page.content ?? '' %}
+{% set footer_cols = page.footer_cols ?? '' %}
+{% set footer_bottom = page.footer_bottom ?? '' %}
+
+{% extends "@bootstrap5/layout/page.html.twig" %}
+{% do attach_library('altal_theme/global') %}
+
+{% block page %}
+  {{ page.page_top }}
+
+  {# ─── Top bar ─── #}
+  {% if page.header_top %}
+    <div class="topbar py-1">
+      <div class="container d-flex justify-content-between">
+        {{ page.header_top }}
+      </div>
+    </div>
+  {% endif %}
+
+  {# ─── Main header with logo, menu, language switcher, and auth links ─── #}
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <!-- Logo & Tagline -->
+      <a href="{{ path('<front>') }}" class="logo-link" title="{{ 'Home'|t }}" rel="home">
+        <img src="{{ base_path ~ directory }}/images/Altal_logo.png" alt="{{ 'Home'|t }}" class="logo-img" />
+        <span class="logo-tagline">Welcome<br>to Arabia</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="main-navigation" role="navigation">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link">Destinations</a></li>
+          <li><a href="#" class="nav-link">Things To Do</a></li>
+          <li><a href="#" class="nav-link">Plan Your Trip</a></li>
+          <li><a href="#" class="nav-link">Saudi Calendar</a></li>
+          <li><a href="#" class="nav-link">Saudi Map</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Accessibility"><i class="fa fa-universal-access"></i></button>
+        <button class="icon-btn" aria-label="Search"><i class="fa fa-search"></i></button>
+        <button class="outline-btn lang-btn"><i class="fa fa-globe"></i> EN</button>
+        <button class="outline-btn visa-btn">Get Your Visa</button>
+        <a href="/user/login" class="solid-btn login-btn">Log In / Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  {# ─── Main content area ─── #}
+  <main role="main" class="py-4">
+    <div class="container">
+      {{ page.content }}
+      
+      {# Add logo below the intro text #}
+      <div class="altal-intro-section">
+        <div class="intro-text">
+          <h2>Altal City Portal - Your Gateway to Municipal Services</h2>
+          <p>Providing efficient and accessible services to our citizens</p>
+          <a href="{{ path('<front>') }}" class="footer-logo">
+            <img src="{{ base_path ~ directory }}/images/Altal_logo.png" alt="{{ 'Altal City Logo'|t }}" class="footer-logo-img">
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  {% if page.footer is empty %}
+  {% include '@altal_theme/footer.html.twig' %}
+{% else %}
+  {{ page.footer }}
+{% endif %}
+
+
+  {# ─── Footer columns ─── #}
+  {% if page.footer_cols %}
+    <footer class="footer">
+      <div class="container">
+        {{ page.footer_cols }}
+      </div>
+    </footer>
+  {% endif %}
+{% if page.footer %}
+  <footer class="site-footer mt-auto bg-dark text-light py-4">
+    <div class="container">
+      {{ page.footer }}
+    </div>
+  </footer>
+{% endif %}
+  {# ─── Footer bottom strip ─── #}
+  {% if page.footer_bottom %}
+    <div class="footer-bottom text-center py-2">
+      {{ page.footer_bottom }}
+    </div>
+  {% endif %}
+
+  {{ page.page_bottom }}
+
+  {# Render the Altal Footer block #}
+  {{ drupal_block('altal_footer_block') }}
+
+  {% if page.footer_columns %}
+    <footer class="site-footer-wrapper">
+      {{ page.footer_columns }}
+    </footer>
+  {% endif %}
+{% endblock %}

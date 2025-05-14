@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Theme implementation to display the footer.
+ */
+#}
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      {# Footer Logo #}
+      <div class="footer-logo">
+        <a href="{{ path('<front>') }}" class="logo-link" title="{{ 'Home'|t }}" rel="home">
+          <img src="{{ base_path ~ directory }}/images/Altal_logo.png" alt="{{ 'Home'|t }}" class="logo-img" />
+        </a>
+      </div>
+
+      {# Footer Menu #}
+      <div class="footer-menu">
+        {{ drupal_block('system_menu_block:footer') }}
+      </div>
+
+      {# Social Media Links #}
+      <div class="footer-social">
+        {{ drupal_block('altal_socialmedialinks') }}
+      </div>
+
+      {# Copyright #}
+      <div class="footer-copyright">
+        <p>&copy; {{ "now"|date("Y") }} {{ 'Altal Tourism. All rights reserved.'|t }}</p>
+      </div>
+    </div>
+  </div>
+</footer> 

@@ -1,0 +1,35 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      css/altal-layout.css: {}
+      css/altal-footer.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/drupal
+    - core/classy
+
+global-css:
+  version: VERSION
+  css:
+    theme:
+      css/altal-footer.css: {}
+      css/altal-header.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/drupal
+    - core/classy
+
+altal_layout.altal_header:
+  js:
+    js/altal-header.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+footer:
+  css:
+    theme:
+      css/altal-footer.css: {}

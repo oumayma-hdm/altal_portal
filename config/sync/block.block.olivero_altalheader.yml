@@ -1,0 +1,25 @@
+uuid: c8374431-244b-4227-8aa4-db70f3b2bf7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - altal_layout
+    - system
+  theme:
+    - olivero
+id: olivero_altalheader
+theme: olivero
+region: header
+weight: 0
+provider: null
+plugin: altal_header_block
+settings:
+  id: altal_header_block
+  label: 'Altal Header'
+  label_display: '0'
+  provider: altal_layout
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: ''

@@ -1,0 +1,135 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a header block.
+ *
+ * Available variables:
+ * - header_logo: The URL of the header logo.
+ * - menu_name: The machine name of the menu to display.
+ * - header_menu: The rendered menu.
+ */
+#}
+{# Announcements Bar #}
+<div class="announcements-bar">
+  <div class="container">
+    <div class="d-flex justify-content-end align-items-center">
+      <i class="bi bi-bell me-2"></i>
+      <span>Announcements</span>
+    </div>
+  </div>
+</div>
+
+{# Main Header - Black part #}
+<header class="site-header">
+  <div class="container">
+    <div class="header-container">
+      {# Logo with proper fallback #}
+      <div class="site-logo">
+        <a href="{{ path('<front>') }}">
+          {% if header_logo %}
+            <img src="{{ header_logo }}" alt="Altal City" class="logo-image">
+          {% else %}
+            <img src="{{ base_path ~ directory }}/images/Altal_logo.png" alt="Altal City" class="logo-image">
+          {% endif %}
+          <h1 class="site-name arabic-text">مدينة التل</h1>
+        </a>
+      </div>
+
+      {# Main Navigation - Desktop #}
+      <nav class="main-navigation d-none d-lg-flex">
+        {% if header_menu %}
+          {{ header_menu }}
+        {% elseif menu_name %}
+          {{ drupal_menu(menu_name) }}
+        {% endif %}
+      </nav>
+
+      {# Header Actions #}
+      <div class="header-actions">
+        {# Accessibility #}
+        <button class="icon-button accessibility-button d-none d-md-flex">
+          <i class="bi bi-person-fill"></i>
+        </button>
+
+        {# Search #}
+        <button class="icon-button search-button d-none d-sm-flex">
+          <i class="bi bi-search"></i>
+        </button>
+
+        {# Language Switcher #}
+        <div class="language-switcher d-none d-sm-block">
+          <div class="dropdown">
+            <button class="dropdown-toggle lang-button" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="globe-icon">
+                <i class="bi bi-globe"></i>
+              </span>
+              <span>EN</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item active" href="/en">English</a></li>
+              <li><a class="dropdown-item" href="/ar">العربية</a></li>
+            </ul>
+          </div>
+        </div>
+
+        {# Login/Signup Button #}
+        <a href="/user/login" class="cta-button login-button d-none d-md-inline-block">
+          Log In / Sign Up
+        </a>
+
+        {# Mobile Menu Toggle Button #}
+        <button class="menu-toggle-btn d-lg-none" type="button" id="menuToggleBtn" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+          <span class="menu-text ms-1">Menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+{# Mobile Navigation #}
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="mobileMenuLabel">
+      {% if header_logo %}
+        <img src="{{ header_logo }}" alt="Altal City" height="50" class="me-1">
+      {% else %}
+        <img src="{{ base_path ~ directory }}/images/Altal_logo.png" alt="Altal City" height="50" class="me-1">
+      {% endif %}
+      <span class="arabic-text">مدينة التل</span>
+    </h5>
+    <button type="button" class="btn-close text-reset btn-sm" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="mobile-navigation">
+      {% if header_menu %}
+        {{ header_menu }}
+      {% elseif menu_name %}
+        {{ drupal_menu(menu_name, {
+          'menu_class': 'navbar-nav',
+          'item_class': 'nav-item',
+          'link_class': 'nav-link'
+        }) }}
+      {% else %}
+        <div class="alert alert-info small">
+          No menu configured.
+        </div>
+      {% endif %}
+    </div>
+    <div class="mt-3">
+      <div class="d-flex justify-content-between mb-2">
+        <button class="btn btn-outline-secondary btn-sm flex-grow-1 me-1">
+          <i class="bi bi-globe"></i> EN
+        </button>
+        <button class="btn btn-outline-secondary btn-sm flex-grow-1 ms-1">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+      <a href="/user/login" class="cta-button login-button w-100">
+        Log In / Sign Up
+      </a>
+    </div>
+  </div>
+</div> 

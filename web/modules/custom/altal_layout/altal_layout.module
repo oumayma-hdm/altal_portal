@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Contains altal_layout.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_help().
+ */
+function altal_layout_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.altal_layout':
+      $output = '';
+      $output .= '<h3>' . \Drupal::translation()->translate('About') . '</h3>';
+      $output .= '<p>' . \Drupal::translation()->translate('Custom layout module for Altal Portal.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function altal_layout_page_attachments(array &$attachments) {
+  // Attach our custom libraries to all pages
+  $attachments['#attached']['library'][] = 'altal_layout/global';
+  $attachments['#attached']['library'][] = 'altal_layout/altal_header';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function altal_layout_theme() {
+  return [
+    'altal_header' => [
+      'variables' => [
+        'header_logo' => NULL,
+        'menu_name' => NULL,
+        'header_menu' => NULL,
+      ],
+      'template' => 'altal-header',
+    ],
+    'altal_footer_block' => [
+      'variables' => [
+        'footer_logo' => NULL,
+        'footer_text' => NULL,
+      ],
+      'template' => 'altal-footer-block',
+    ],
+  ];
+}

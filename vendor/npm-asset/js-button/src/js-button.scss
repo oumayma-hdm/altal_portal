@@ -1,0 +1,56 @@
+
+.c-button {
+  background: transparent;
+  border-color:currentcolor;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  color:inherit;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  margin: 0;
+  padding: 0.4em 0.75em;;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+
+.c-button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
+.c-button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+
+.c-button:hover,
+.c-button:focus,
+.c-button:active {
+  text-decoration: none;
+}
+
+.c-button:disabled,
+.c-button.is-disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.c-button--toggle-state {
+  &:not(.is-active) {
+    .o-icon--visible-on-active { display: none}
+    .c-button__text--visible-on-active { display: none}
+  }
+  &.is-active {
+    .o-icon:not(.o-icon--visible-on-active) { display: none}
+    .c-button__text:not(.c-button__text--visible-on-active) { display: none}
+    .c-button__text--visible-on-active {}
+  }
+}

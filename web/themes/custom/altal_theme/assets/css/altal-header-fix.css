@@ -1,0 +1,820 @@
+/**
+ * Critical header fixes
+ * This file contains emergency fixes to ensure header visibility
+ */
+
+/* Add Alkalami font import */
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+
+/* Basic offcanvas styles since we're missing the library */
+.offcanvas {
+  position: fixed;
+  bottom: 0;
+  z-index: 1045;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  visibility: hidden;
+  background: linear-gradient(#071A2A 0%, #0B2438 100%);
+  background-clip: padding-box;
+  outline: 0;
+  transition: transform .3s ease-in-out;
+}
+
+.offcanvas-end {
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.offcanvas.show {
+  transform: none !important;
+  visibility: visible !important;
+}
+
+.offcanvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.offcanvas-body {
+  flex-grow: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+  color: white;
+}
+
+.offcanvas-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+.offcanvas-backdrop.fade {
+  opacity: 0;
+}
+
+.offcanvas-backdrop.show {
+  opacity: 0.5;
+}
+
+/* Force display of the header components */
+.site-header {
+  display: block !important;
+  background: linear-gradient(#071A2A 0%, #0B2438 100%) !important;
+  position: relative !important;
+  z-index: 1000 !important;
+  visibility: visible !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  transition: transform 0.3s ease-in-out !important;
+  padding: 0 !important; /* Remove padding */
+}
+
+/* Sticky header styles */
+.site-header.sticky {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  z-index: 9999 !important; /* Ensure highest level */
+  animation-name: slideInDown !important;
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both !important;
+}
+
+/* Add Animation */
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.site-header.sticky {
+  animation-name: slideInDown !important;
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both !important;
+}
+
+/* Smaller header container */
+.header-container {
+  display: flex !important;
+  align-items: center !important;
+  height: 50px !important; /* Reduced height */
+  justify-content: space-between !important;
+  width: 100% !important;
+  visibility: visible !important;
+  padding: 0 10px !important; /* Reduced side padding */
+}
+
+/* Smaller logo */
+.site-logo {
+  display: flex !important;
+  padding-right: 0 !important; /* Remove padding */
+  visibility: visible !important;
+}
+
+.site-logo a {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  visibility: visible !important;
+}
+
+.logo-image {
+  height: 45px !important; /* Reduced size */
+  margin-right: 8px !important; /* Reduced margin */
+  padding: 2px !important; /* Reduced padding */
+  border-radius: 3px !important; /* Smaller radius */
+  display: inline-block !important;
+  visibility: visible !important;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.2));
+}
+
+/* Smaller text for site name */
+.site-name {
+  color: #FFFFFF !important;
+  margin: 0 !important;
+  font-size: 1.1rem !important; /* Reduced size */
+  font-weight: 500 !important;
+  font-family: 'Alkalami', "Traditional Arabic", "Arabic Typesetting", serif !important;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+/* Compact header actions */
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  visibility: visible !important;
+  gap: 4px !important; /* Reduced gap */
+}
+
+.icon-button {
+  width: 28px !important; /* Reduced size */
+  height: 28px !important; /* Reduced size */
+  font-size: 0.9rem !important; /* Smaller font */
+  padding: 0 !important; /* Remove padding */
+}
+
+.cta-button {
+  padding: 0.2rem 0.5rem !important; /* Reduced padding */
+  font-size: 0.8rem !important; /* Smaller font */
+  margin: 0 2px !important; /* Reduced margin */
+}
+
+.lang-button {
+  padding: 0.2rem 0.4rem !important; /* Reduced padding */
+  font-size: 0.8rem !important; /* Smaller font */
+}
+
+.menu-toggle-btn {
+  padding: 2px 4px !important; /* Reduced padding */
+}
+
+/* Mobile menu link styling */
+.offcanvas .navbar-nav .nav-link {
+  color: #F3F6FA;
+  padding: 0.5rem 0.75rem; /* Reduced padding */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.offcanvas .navbar-nav .nav-link:hover,
+.offcanvas .navbar-nav .nav-link:focus {
+  color: white;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.offcanvas .navbar-nav .show > .nav-link,
+.offcanvas .navbar-nav .nav-link.active {
+  color: white;
+  font-weight: bold;
+}
+
+.offcanvas-title {
+  color: white !important;
+  font-size: 0.9rem !important;
+}
+
+.offcanvas .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  padding: 0.25rem !important;
+}
+
+/* Update navbar links with improved contrast */
+.main-navigation ul.navbar-nav li.nav-item .nav-link {
+  color: #F3F6FA;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-navigation ul.navbar-nav li.nav-item .nav-link:hover,
+.main-navigation ul.navbar-nav li.nav-item .nav-link.is-active {
+  color: #FFFFFF;
+}
+
+.main-navigation ul.navbar-nav li.nav-item .nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #FFFFFF;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.main-navigation ul.navbar-nav li.nav-item .nav-link:hover:after,
+.main-navigation ul.navbar-nav li.nav-item .nav-link.is-active:after {
+  width: 70%;
+}
+
+/* Navbar container should be more compact */
+.main-navigation .navbar-nav {
+  gap: 2px;
+}
+
+/* Add subtle skyline glow if needed */
+.site-header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #14395C;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Compact responsive styles */
+@media (max-width: 1200px) {
+  /* Adjust layout for medium-large screens */
+  .main-navigation ul.navbar-nav li.nav-item .nav-link {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Tablet adjustments */
+  .menu-toggle-btn {
+    display: flex !important;
+    visibility: visible !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Further optimize the offcanvas for tablets */
+  .offcanvas {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Smaller tablets and large phones */
+  .site-name {
+    font-size: 0.9rem !important;
+  }
+  
+  .cta-button {
+    padding: 0.15rem 0.4rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Mobile phone adjustments */
+  .header-container {
+    height: 45px !important;
+  }
+  
+  .logo-image {
+    height: 35px !important;
+    margin-right: 6px !important;
+  }
+  
+  .site-name {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Optimize the offcanvas for smaller screens */
+  .offcanvas {
+    max-width: 250px;
+  }
+}
+
+/* Enhance accessibility for focus states */
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+  outline-offset: 2px !important;
+}
+
+/* Footer Logo Styling */
+.footer-logo {
+  display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 180px;
+}
+
+.footer-logo img {
+  width: 100%;
+  height: auto;
+  filter: brightness(1.1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+  transition: filter 0.3s ease;
+}
+
+.footer-logo:hover img {
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+@media (max-width: 767px) {
+  .footer-logo {
+    max-width: 150px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Introduction Section Styling */
+.altal-intro-section {
+  padding: 1rem 0 !important;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(20, 57, 92, 0.1) 0%, rgba(7, 26, 42, 0.05) 100%);
+  border-radius: 4px;
+  margin-bottom: 1.5rem !important;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-text h2 {
+  color: #0F2D48;
+  font-size: 1.5rem !important;
+  font-weight: 600;
+  margin-bottom: 0.5rem !important;
+}
+
+.intro-text p {
+  color: #505A64;
+  font-size: 0.95rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.intro-text .footer-logo {
+  margin: 0.75rem auto !important;
+  display: block;
+  position: relative;
+  max-width: 150px;
+}
+
+.intro-text .footer-logo::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 40px;
+  height: 1px;
+  background-color: #0F2D48;
+  transform: translateX(-50%);
+}
+
+.intro-text .footer-logo-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.intro-text .footer-logo:hover .footer-logo-img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 767px) {
+  .altal-intro-section {
+    padding: 0.75rem 0 !important;
+  }
+  
+  .intro-text h2 {
+    font-size: 1.2rem !important;
+  }
+  
+  .intro-text p {
+    font-size: 0.85rem !important;
+  }
+  
+  .intro-text .footer-logo {
+    max-width: 120px;
+  }
+}
+
+/* Global compact styles for the entire site */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: auto !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important; /* Remove any background color */
+}
+
+/* Remove forced background color */
+body {
+  background-color: transparent !important;
+}
+
+/* Fix layout structure */
+.layout-container,
+.dialog-off-canvas-main-canvas,
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: auto !important;
+}
+
+/* Let content expand naturally */
+main, 
+.main-content,
+#content {
+  flex: 1 0 auto;
+  display: block;
+}
+
+/* Remove fixed heights from wrappers */
+body > div, 
+#page,
+#main {
+  height: auto !important;
+}
+
+.container {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.row {
+  margin-left: -5px !important;
+  margin-right: -5px !important;
+}
+
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+.col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12,
+.col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+.col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12,
+.col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+/* Reduce margins between content sections */
+main {
+  padding: 0 !important;
+  flex: 1;
+}
+
+main > .container {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+p {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Button and form compactness */
+.btn {
+  padding: 0.25rem 0.5rem !important;
+}
+
+.form-control {
+  padding: 0.25rem 0.5rem !important;
+  height: auto !important;
+}
+
+/* Table compactness */
+.table td, .table th {
+  padding: 0.3rem 0.5rem !important;
+}
+
+/* Card compactness */
+.card {
+  margin-bottom: 0.5rem !important;
+}
+
+.card-header, .card-footer {
+  padding: 0.5rem !important;
+}
+
+.card-body {
+  padding: 0.75rem !important;
+}
+
+/* List group compactness */
+.list-group-item {
+  padding: 0.5rem !important;
+}
+
+/* Compact footer styling */
+.altal-footer-block {
+  padding: 2rem 0 1rem !important;
+  margin-top: 0 !important; /* Remove top margin to prevent white space */
+}
+
+.footer-services {
+  padding-top: 1rem !important;
+}
+
+.footer-bottom {
+  padding-top: 0.5rem !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Hide any extra vertical spacing */
+.region-content {
+  margin-bottom: 0 !important;
+}
+
+.page-content {
+  margin-bottom: 0 !important;
+}
+
+/* Ensure footer is at bottom without extra space */
+.site-footer, footer {
+  margin-top: 0 !important;
+}
+
+/* Fix layout to eliminate white space */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1 0 auto;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.region-content {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Ensure no space between blocks */
+.block {
+  margin-bottom: 0 !important;
+}
+
+/* Eliminate any padding at page bottom */
+.layout-content {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Target specifically the footer and main connection */
+main + footer,
+main + .region-footer,
+.layout-content + footer,
+.layout-content + .region-footer {
+  margin-top: 0 !important;
+}
+
+/* Fix for browser-specific rendering issues */
+@media (max-width: 767px) {
+  /* Fix for Safari/iOS white space issues */
+  html, body {
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  body > .dialog-off-canvas-main-canvas {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Force all wrappers to stretch */
+  body > div, 
+  .layout-container,
+  .page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  /* Push footer to bottom */
+  main, 
+  .main-content,
+  #content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ensure no margin on region-footer */
+  .region-footer {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Remove white space that might appear below footer */
+  body::after {
+    display: none !important;
+  }
+  
+  /* Fix for possible spacing between sections */
+  .region + .region {
+    margin-top: 0 !important;
+  }
+}
+
+/* Simplified layout fixes for height issues */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Simple mobile fixes - avoid over-engineering */
+@media (max-width: 767px) {
+  /* Simpler approach */
+  body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+  
+  /* Ensure content at least fills viewport */
+  main {
+    min-height: 50vh;
+  }
+  
+  /* Basic content and footer connection */
+  .region-footer {
+    margin-top: 0;
+  }
+}
+
+/* Target direct wrapper for region-footer only */
+.region-footer {
+  margin-top: -1px !important; /* Negative margin to connect with content */
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 0 !important; /* Key for removing white space */
+}
+
+/* Reset line-height only for content */
+.region-footer > div {
+  line-height: normal !important;
+}
+
+/* Straightforward approach for removing extra space */
+main {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+main > div,
+main > .container,
+.region-content,
+.layout-content {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Fix for any spacing elements - more targeted approach */
+.block {
+  margin-bottom: 0 !important;
+}
+
+/* Remove vertical spacing in footer */
+.altal-footer-block {
+  margin-top: 0 !important;
+}
+
+/* Critical fix for spacing issue */
+div[class*="region-"],
+.region-content,
+.layout-content,
+#content,
+.page-content,
+main {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+/* Ensure blocks don't add spacing */
+.block {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Target sticky header */
+.site-header.sticky {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  z-index: 9999 !important; /* Ensure highest level */
+  animation-name: slideInDown !important;
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both !important;
+}
+
+/* Core body layout fix */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: auto !important;
+}
+
+/* Push footer to bottom */
+main, .main-content {
+  flex: 1 0 auto;
+}
+
+/* Prevent any wrapper elements from creating white space */
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Target the footer container specifically */
+.region-footer {
+  margin-bottom: 0 !important;
+  line-height: 0 !important; /* Critical fix */
+}
+
+.region-footer > * {
+  line-height: normal;
+}
+
+/* Fix for browser inconsistencies */
+@media screen and (max-width: 768px) {
+  /* Ensure direct attachment on mobile */
+  main, .main-content, .layout-content, .region-content {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+} 

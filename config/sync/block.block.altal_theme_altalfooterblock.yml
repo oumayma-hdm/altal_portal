@@ -1,0 +1,22 @@
+uuid: 65a105c0-39c7-4465-9782-9754c8be2057
+langcode: en
+status: true
+dependencies:
+  module:
+    - altal_layout
+  theme:
+    - altal_theme
+id: altal_theme_altalfooterblock
+theme: altal_theme
+region: footer
+weight: 0
+provider: null
+plugin: altal_footer_block1
+settings:
+  id: altal_footer_block1
+  label: 'Altal Footer Block'
+  label_display: visible
+  provider: altal_layout
+  footer_logo: ''
+  footer_text: ''
+visibility: {  }

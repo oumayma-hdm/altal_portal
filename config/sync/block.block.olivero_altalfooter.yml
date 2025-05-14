@@ -1,0 +1,25 @@
+uuid: 0f948013-8650-4e51-adbe-cedd0d2f91c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - altal_layout
+    - system
+  theme:
+    - olivero
+id: olivero_altalfooter
+theme: olivero
+region: footer_top
+weight: 0
+provider: null
+plugin: altal_footer_block
+settings:
+  id: altal_footer_block
+  label: 'Altal Footer'
+  label_display: '0'
+  provider: altal_layout
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: ''

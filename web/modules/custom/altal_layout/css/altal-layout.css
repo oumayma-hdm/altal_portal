@@ -1,0 +1,136 @@
+/**
+ * Altal Layout Styles
+ * Inspired by modern municipal sites
+ */
+
+:root{
+  --altal-primary:#00579d;
+  --altal-secondary:#00a7e1;
+}
+
+/* --- Header Styles --- */
+.site-header {
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative; /* Changed from fixed */
+  height: auto; /* Changed from fixed height */
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 2px 8px 0 rgba(48, 49, 51, 0.1);
+}
+
+/* Remove body padding since header is not fixed anymore */
+body {
+  padding-top: 0;
+}
+
+/* --- Auth Buttons --- */
+.auth-links {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  display: flex;
+  margin-left: auto;
+}
+
+.auth-links .btn {
+  min-width: 100px;
+  font-size: 0.9rem;
+  border-radius: 4px; /* Restored border radius */
+  border: 1px solid; /* Restored border */
+  font-weight: 500;
+  text-decoration: none;
+  height: auto; /* Changed from fixed height */
+  padding: 0.5rem 1rem; /* Added proper padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Main navigation styling */
+.main-navigation .navbar-nav {
+  display: flex;
+  flex-direction: row !important;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.main-navigation .navbar-nav .nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation .navbar-nav .nav-link {
+  color: #495057;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+.main-navigation .navbar-nav .nav-link:hover {
+  color: var(--altal-primary);
+}
+
+.main-navigation .navbar-nav .nav-link.is-active {
+  color: var(--altal-primary);
+  font-weight: 600;
+}
+
+/* Language switcher */
+.header-lang-switcher {
+  margin: 0 1rem;
+}
+
+.header-lang-switcher .lang-toggle {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.header-lang-switcher .lang-code {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .site-header {
+    height: 50px;
+    position: fixed;
+  }
+  
+  body {
+    padding-top: 50px;
+  }
+  
+  .auth-links .btn {
+    height: 50px;
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
+  
+  .site-header img {
+    height: 40px;
+  }
+}
+
+.mobile-menu {
+  display: none;
+}
+.mobile-menu.active {
+  display: block !important;
+}

@@ -1,0 +1,23 @@
+uuid: d6302256-844d-4d15-b4a6-035ab11e49db
+langcode: en
+status: true
+dependencies:
+  module:
+    - altal_layout
+  theme:
+    - altal_theme
+id: altal_theme_altalheader_3
+theme: altal_theme
+region: header
+weight: 0
+provider: null
+plugin: altal_header_block
+settings:
+  id: altal_header_block
+  label: 'Altal Header'
+  label_display: '0'
+  provider: altal_layout
+  menu_name: main
+  header_logo: '4'
+  header_logo_path: 'http://localhost:8888/altal-portal/web/sites/default/files/header_logos/no.png'
+visibility: {  }

@@ -1,0 +1,113 @@
+{#
+/**
+ * @file
+ * Theme implementation to display the header region inspired by Visit Saudi.
+ */
+#}
+<header class="site-header">
+  {# Utility Bar #}
+  <div class="utility-bar">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        {# Language Switcher #}
+        <div class="header-lang-switcher">
+          <button class="lang-toggle dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="lang-icon bi bi-globe"></span>
+            <span class="lang-label">Language:</span>
+            <span class="lang-code">En</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="langDropdown">
+            <li><a class="dropdown-item active" href="/en">English</a></li>
+            <li><a class="dropdown-item" href="/ar">العربية</a></li>
+          </ul>
+        </div>
+
+        {# Auth Links #}
+        <div class="auth-links">
+          <a href="/user/login" class="auth-link">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Login</span>
+          </a>
+          <a href="/user/register" class="auth-link">
+            <i class="bi bi-person-plus"></i>
+            <span>Register</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Main Navigation #}
+  <div class="main-nav">
+    <div class="container">
+      <div class="row align-items-center">
+        {# Logo & Site Name #}
+        <div class="col-auto">
+          <a href="/altal-portal/web/" class="logo-wrapper">
+            <h1 class="logo-text">مدينة التل</h1>
+          </a>
+        </div>
+
+        {# Desktop Navigation #}
+        <div class="col d-none d-lg-block">
+          <nav class="navigation-menu">
+            {% if page.primary_menu %}
+              {{ page.primary_menu }}
+            {% endif %}
+          </nav>
+        </div>
+
+        {# Search and Menu Toggle #}
+        <div class="col-auto d-flex align-items-center">
+          <button class="search-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#searchBox" aria-expanded="false" aria-controls="searchBox">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="menu-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Search Box #}
+  <div class="collapse" id="searchBox">
+    <div class="container">
+      <div class="search-container">
+        <form class="search-form" action="/search" method="get">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search..." name="query">
+            <button class="btn btn-search" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {# Mobile Navigation #}
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel">مدينة التل</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="mobile-navigation">
+        {% if page.primary_menu %}
+          {{ page.primary_menu }}
+        {% endif %}
+      </nav>
+      <div class="mobile-auth-links">
+        <a href="/user/login" class="btn btn-outline-primary w-100 mb-2">
+          <i class="bi bi-box-arrow-in-right me-1"></i>Login
+        </a>
+        <a href="/user/register" class="btn btn-primary w-100">
+          <i class="bi bi-person-plus me-1"></i>Register
+        </a>
+      </div>
+    </div>
+  </div>
+</header> 

@@ -1,0 +1,28 @@
+uuid: b8707cc7-a0f6-4530-a006-443a0940a9fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_excerpt
+    - filter.format.basic_html
+    - filter.format.full_html
+    - node.type.news
+  module:
+    - text
+id: node.news.field_excerpt
+field_name: field_excerpt
+entity_type: node
+bundle: news
+label: Excerpt
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_with_summary

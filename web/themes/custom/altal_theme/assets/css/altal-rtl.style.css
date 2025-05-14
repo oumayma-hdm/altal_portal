@@ -1,0 +1,100 @@
+/* Altal Theme RTL Styles */
+
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Navigation */
+.navbar-nav {
+  padding-right: 0;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.dropdown-menu {
+  right: 0;
+  left: auto;
+  text-align: right;
+}
+
+/* Lists */
+ul, ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+/* Forms */
+.form-check {
+  padding-right: 1.25rem;
+  padding-left: 0;
+}
+
+.form-check-input {
+  margin-right: -1.25rem;
+  margin-left: 0;
+}
+
+/* Input groups */
+.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .input-group-text,
+.input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+/* Modal */
+.modal-header .close {
+  margin: -1rem auto -1rem -1rem;
+}
+
+/* Alert */
+.alert-dismissible {
+  padding-right: 1.25rem;
+  padding-left: 4rem;
+}
+
+.alert-dismissible .close {
+  right: auto;
+  left: 0;
+}
+
+/* List group */
+.list-group {
+  padding-right: 0;
+}
+
+/* Card */
+.card-header-tabs {
+  margin-right: -1.25rem;
+  margin-left: -1.25rem;
+  padding-right: 0;
+}
+
+/* Pagination */
+.pagination {
+  padding-right: 0;
+}
+
+.page-item:first-child .page-link {
+  border-radius: 0 0.25rem 0.25rem 0;
+  margin-left: -1px;
+}
+
+.page-item:last-child .page-link {
+  border-radius: 0.25rem 0 0 0.25rem;
+} 

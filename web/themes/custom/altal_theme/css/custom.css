@@ -1,0 +1,123 @@
+/* Header styling improvements */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  position: relative;
+  height: auto;
+  z-index: 1030;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Remove padding from container-fluid */
+.site-header.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Remove padding and max-width from inner container */
+.site-header .container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add padding to logo area */
+.site-header a:first-child {
+  padding-left: 15px;
+}
+
+/* Add padding to the right side elements */
+.site-header .d-none.d-md-flex {
+  padding-right: 15px;
+}
+
+/* Rest of the styles remain unchanged */
+.site-header .logo img {
+  height: 45px;
+}
+
+/* Navigation improvements */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar-nav .nav-item {
+  margin: 0;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 0.75rem;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #00579d;
+}
+
+.navbar-nav .nav-link.is-active {
+  color: #00579d;
+  font-weight: 600;
+}
+
+/* Language switcher styling */
+.header-lang-switcher {
+  margin: 0 1rem;
+}
+
+.header-lang-switcher .lang-toggle {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Auth buttons styling */
+.auth-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.auth-links .btn {
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.auth-links .btn-outline-primary {
+  color: #00579d;
+  border-color: #00579d;
+  background-color: transparent;
+}
+
+.auth-links .btn-primary {
+  background-color: #00579d;
+  border-color: #00579d;
+  color: white;
+}
+
+.auth-links .btn-outline-primary:hover {
+  background-color: rgba(0, 87, 157, 0.1);
+  color: #00579d;
+}
+
+.auth-links .btn-primary:hover {
+  background-color: #004a84;
+  border-color: #004a84;
+}

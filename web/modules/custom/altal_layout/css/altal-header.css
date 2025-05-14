@@ -1,0 +1,271 @@
+.site-header {
+  background-color: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo & Site Name */
+.site-header h1 {
+  font-family: 'Cairo', sans-serif;
+  color: #1a4b8c;
+  margin: 0;
+}
+
+/* Main Navigation */
+.main-navigation {
+  margin: 0 2rem;
+}
+
+.main-navigation .navbar-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation .nav-item {
+  margin: 0 0.5rem;
+}
+
+.main-navigation .nav-link {
+  color: #1a4b8c;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.main-navigation .nav-link:hover,
+.main-navigation .nav-link.is-active {
+  color: #2c6bb0;
+}
+
+/* Language Switcher */
+.header-lang-switcher {
+  margin: 0 1rem;
+}
+
+.lang-toggle {
+  background: none;
+  border: 1px solid #1a4b8c;
+  color: #1a4b8c;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background-color: #1a4b8c;
+  color: #fff;
+}
+
+.lang-icon {
+  font-size: 1.1rem;
+}
+
+.lang-code {
+  font-weight: 500;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.dropdown-item {
+  color: #1a365d;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background-color: #f8fafc;
+  color: #60a5fa;
+}
+
+/* Auth Links */
+.auth-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-links .btn {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.auth-links .btn-outline-primary {
+  color: #1a365d;
+  border-color: #1a365d;
+}
+
+.auth-links .btn-outline-primary:hover {
+  background-color: #1a365d;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.auth-links .btn-primary {
+  background-color: #1a365d;
+  border-color: #1a365d;
+}
+
+.auth-links .btn-primary:hover {
+  background-color: #60a5fa;
+  border-color: #60a5fa;
+  transform: translateY(-1px);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #1a4b8c;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Mobile Navigation */
+.mobile-navigation {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-navigation.is-active {
+  display: block;
+}
+
+.mobile-navigation .main-navigation ul {
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-navigation .main-navigation a {
+  display: block;
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mobile-navigation .main-navigation a:last-child {
+  border-bottom: none;
+}
+
+.mobile-navigation .main-navigation a:after {
+  display: none;
+}
+
+.mobile-auth-links {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .main-navigation {
+    margin-right: 1rem;
+  }
+
+  .main-navigation ul {
+    gap: 1rem;
+  }
+
+  .auth-links {
+    gap: 0.5rem;
+  }
+
+  .auth-links .btn {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .site-header {
+    padding: 1rem 0;
+  }
+
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+
+  #mobileMenu {
+    background-color: #fff;
+    border-top: 1px solid #e9ecef;
+  }
+
+  #mobileMenu .main-navigation {
+    margin: 0;
+  }
+
+  #mobileMenu .navbar-nav {
+    flex-direction: column;
+  }
+
+  #mobileMenu .nav-item {
+    margin: 0;
+    width: 100%;
+  }
+
+  #mobileMenu .nav-link {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  #mobileMenu .dropdown-menu {
+    position: static;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #mobileMenu .dropdown-item {
+    padding: 0.75rem 1rem;
+  }
+
+  .mobile-auth-links {
+    margin-top: 1rem;
+  }
+
+  .mobile-auth-links .btn {
+    margin-bottom: 0.5rem;
+  }
+} 

@@ -1,0 +1,25 @@
+uuid: 45c4b031-d2db-4f7c-9b5b-3137ba557425
+langcode: en
+status: true
+dependencies:
+  module:
+    - altal_layout
+    - system
+  theme:
+    - claro
+id: claro_altalheader
+theme: claro
+region: header
+weight: 0
+provider: null
+plugin: altal_header_block
+settings:
+  id: altal_header_block
+  label: 'Altal Header'
+  label_display: '0'
+  provider: altal_layout
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: ''

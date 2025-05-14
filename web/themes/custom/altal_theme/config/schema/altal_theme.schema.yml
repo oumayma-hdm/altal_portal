@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Altal Theme theme.
+altal_theme.settings:
+  type: theme_settings
+  label: 'Altal Theme settings'
+  mapping:
+    example:
+      type: string
+      label: Example

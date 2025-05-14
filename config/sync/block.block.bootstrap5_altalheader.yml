@@ -1,0 +1,20 @@
+uuid: 5fb03f94-b5b5-41d7-84ce-2bdc2dc36fd2
+langcode: en
+status: true
+dependencies:
+  module:
+    - altal_layout
+  theme:
+    - bootstrap5
+id: bootstrap5_altalheader
+theme: bootstrap5
+region: header
+weight: 0
+provider: null
+plugin: altal_header_block
+settings:
+  id: altal_header_block
+  label: "Altal –\_Header"
+  label_display: visible
+  provider: altal_layout
+visibility: {  }

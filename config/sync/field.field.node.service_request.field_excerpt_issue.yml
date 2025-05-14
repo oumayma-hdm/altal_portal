@@ -1,0 +1,28 @@
+uuid: 61e472b5-698d-40ae-a1f0-0836706a005e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_excerpt_issue
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.plain_text
+    - node.type.service_request
+  module:
+    - text
+id: node.service_request.field_excerpt_issue
+field_name: field_excerpt_issue
+entity_type: node
+bundle: service_request
+label: Excerpt
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+    - plain_text
+field_type: text_long
